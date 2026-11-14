@@ -9,21 +9,30 @@
 <body>
   <header>
     <nav>
-      <div class="logo">SOLARIS <span>ENERGY GROUP</span></div>
+      <a href="index.html" class="logo">
+        <div class="logo-badge">S</div>
+        <div class="logo-text">SOLARIS<br><span>ENERGY GROUP</span></div>
+      </a>
+      <button class="burger" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="products.html">Products</a></li>
-        <li><a href="investors.html">Investors</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="investors.html" class="active">Investors</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="nav-actions">
+        <button class="lang-btn">EN</button>
+        <a href="contact.html" class="btn">Get a Quote</a>
+      </div>
     </nav>
   </header>
 
-  <div class="container">
-    <h1 class="section-title">Investors & Share Offering</h1>
-    <p style="text-align:center; max-width:700px; margin:0 auto 1.5rem;">Solaris Energy Group is open to qualified investors.</p>
-    <p style="text-align:center; max-width:700px; margin:0 auto 2rem;">Solaris Energy Group is currently open to qualified investors interested in participating in the company’s growth through a share offering. As a major distributor of JA Solar technology and a specialist in industrial solar installations based in Stuttgart, we continue to expand our footprint across Europe and selected international markets.</p>
+  <div class="section">
+    <h1 class="section-title" style="text-align:center;">Investors & Share Offering</h1>
+    <p style="text-align:center; max-width:700px; margin:0 auto 1.5rem; color:var(--text-muted);">Solaris Energy Group is open to qualified investors.</p>
+    <p style="text-align:center; max-width:700px; margin:0 auto 2rem; color:var(--text-muted);">Solaris Energy Group is currently open to qualified investors interested in participating in the company’s growth through a share offering. As a major distributor of JA Solar technology and a specialist in industrial solar installations based in Stuttgart, we continue to expand our footprint across Europe and selected international markets.</p>
 
     <div class="card" style="max-width:700px; margin:2rem auto;">
       <p><strong>Terms and conditions apply.</strong> This is a public announcement only. Detailed information is available upon request for qualified parties.</p>
@@ -31,14 +40,20 @@
 
     <div style="text-align:center; margin-top:2rem;">
       <h2 class="section-title">Contact for Investor Information</h2>
-      <p>If you are a qualified investor and would like further information about the share offering, please get in touch.</p>
+      <p style="color:var(--text-muted);">If you are a qualified investor and would like further information about the share offering, please get in touch.</p>
       <a href="mailto:investors@solarisenergy.group" class="btn" style="margin-top:1rem;">Contact Investor Relations</a>
     </div>
   </div>
 
   <footer>
-    <p>&copy; 2026 Solaris Energy Group. Stuttgart, Germany.</p>
+    <p>&copy; 2026 Solaris Energy Group. All rights reserved. | Stuttgart, Germany</p>
     <p><a href="mailto:investors@solarisenergy.group">investors@solarisenergy.group</a></p>
   </footer>
+
+  <script>
+    document.querySelectorAll('nav ul a').forEach(a => {
+      a.addEventListener('click', () => document.querySelector('nav ul').classList.remove('open'));
+    });
+  </script>
 </body>
 </html>
