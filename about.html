@@ -9,10 +9,11 @@
 <body>
   <header>
     <nav>
-      <div class="logo">
+      <a href="index.html" class="logo">
         <div class="logo-badge">S</div>
         <div class="logo-text">SOLARIS<br><span>ENERGY GROUP</span></div>
-      </div>
+      </a>
+      <button class="burger" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About</a></li>
@@ -62,7 +63,7 @@
     <p style="color:var(--text-muted); max-width:700px; margin-bottom:1.5rem;">We focus exclusively on industrial and commercial clients who demand performance, reliability, and professional project delivery.</p>
     <div class="cards">
       <div class="card"><div class="icon">🏭</div><h3>Manufacturing Plants</h3><p>Factories and production facilities seeking to lower energy costs and increase energy independence with rooftop or ground-mounted systems.</p></div>
-      <div class="card"><div class="icon">🏗</div><h3>Industrial Parks & Warehouses</h3><p>Large logistics centres and industrial zones that require scalable solar solutions with minimal disruption to operations.</p></div>
+      <div class="card"><div class="icon">🏗️</div><h3>Industrial Parks & Warehouses</h3><p>Large logistics centres and industrial zones that require scalable solar solutions with minimal disruption to operations.</p></div>
       <div class="card"><div class="icon">🤝</div><h3>Project Partners & EPCs</h3><p>Engineering, procurement and construction partners who need a reliable source of Tier-1 JA Solar modules and supporting components.</p></div>
       <div class="card"><div class="icon">💼</div><h3>Investors & Asset Owners</h3><p>Private and institutional investors looking for quality industrial solar assets with strong long-term performance.</p></div>
     </div>
@@ -84,5 +85,11 @@
   <footer>
     <p>&copy; 2026 Solaris Energy Group. All rights reserved. | Stuttgart, Germany</p>
   </footer>
+
+  <script>
+    document.querySelectorAll('nav ul a').forEach(a => {
+      a.addEventListener('click', () => document.querySelector('nav ul').classList.remove('open'));
+    });
+  </script>
 </body>
 </html>
