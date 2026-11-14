@@ -9,20 +9,29 @@
 <body>
   <header>
     <nav>
-      <div class="logo">SOLARIS <span>ENERGY GROUP</span></div>
+      <a href="index.html" class="logo">
+        <div class="logo-badge">S</div>
+        <div class="logo-text">SOLARIS<br><span>ENERGY GROUP</span></div>
+      </a>
+      <button class="burger" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="products.html">Products</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="projects.html">Projects</a></li>
         <li><a href="investors.html">Investors</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="nav-actions">
+        <button class="lang-btn">EN</button>
+        <a href="contact.html" class="btn">Get a Quote</a>
+      </div>
     </nav>
   </header>
 
-  <div class="container">
-    <h1 class="section-title">Products & Solutions</h1>
-    <p style="text-align:center; max-width:700px; margin:0 auto 2rem;">Industrial-grade solar systems, installations and complementary solutions for factories and commercial facilities.</p>
+  <div class="section">
+    <h1 class="section-title" style="text-align:center;">Products & Solutions</h1>
+    <p style="text-align:center; max-width:700px; margin:0 auto 2rem; color:var(--text-muted);">Industrial-grade solar systems, installations and complementary solutions for factories and commercial facilities.</p>
 
     <div class="cards">
       <div class="card">
@@ -49,8 +58,13 @@
   </div>
 
   <footer>
-    <p>&copy; 2026 Solaris Energy Group. Stuttgart, Germany.</p>
-    <p><a href="mailto:info@solarisenergy.group">info@solarisenergy.group</a></p>
+    <p>&copy; 2026 Solaris Energy Group. All rights reserved. | Stuttgart, Germany</p>
   </footer>
+
+  <script>
+    document.querySelectorAll('nav ul a').forEach(a => {
+      a.addEventListener('click', () => document.querySelector('nav ul').classList.remove('open'));
+    });
+  </script>
 </body>
 </html>
