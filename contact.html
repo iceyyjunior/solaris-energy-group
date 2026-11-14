@@ -9,20 +9,29 @@
 <body>
   <header>
     <nav>
-      <div class="logo">SOLARIS <span>ENERGY GROUP</span></div>
+      <a href="index.html" class="logo">
+        <div class="logo-badge">S</div>
+        <div class="logo-text">SOLARIS<br><span>ENERGY GROUP</span></div>
+      </a>
+      <button class="burger" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="products.html">Products</a></li>
+        <li><a href="projects.html">Projects</a></li>
         <li><a href="investors.html">Investors</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
+      <div class="nav-actions">
+        <button class="lang-btn">EN</button>
+        <a href="contact.html" class="btn">Get a Quote</a>
+      </div>
     </nav>
   </header>
 
-  <div class="container">
-    <h1 class="section-title">Contact Us</h1>
-    <p style="text-align:center; margin-bottom:2rem;">Reach the right team using the emails below.</p>
+  <div class="section" style="padding-top: 3rem;">
+    <h1 class="section-title" style="text-align:center;">Contact Us</h1>
+    <p style="text-align:center; color:var(--text-muted); margin-bottom:2rem;">Reach the right team using the emails below</p>
 
     <div class="cards">
       <div class="card">
@@ -42,16 +51,22 @@
         <p><a href="mailto:sales@solarisenergy.group">sales@solarisenergy.group</a></p>
       </div>
     </div>
+  </div>
 
-    <div style="text-align:center; margin-top:3rem;">
-      <h2 class="section-title">Join Our Growth</h2>
-      <p>We are always looking for smart, dedicated and experienced investors to join our growth. If you think you fit the bill, please contact us via <a href="mailto:investors@solarisenergy.group">investors@solarisenergy.group</a>.</p>
-    </div>
+  <div class="join-section">
+    <h2>Join Our Growth</h2>
+    <p style="color:var(--text-muted); max-width:600px; margin:0 auto;">We are always looking for smart, dedicated and experienced investors to join our growth. If you think you fit the bill, please contact us via <a href="mailto:investors@solarisenergy.group" style="color:var(--emerald);">investors@solarisenergy.group</a>. Thank you!</p>
   </div>
 
   <footer>
-    <p>&copy; 2026 Solaris Energy Group. Stuttgart, Germany.</p>
-    <p><a href="mailto:info@solarisenergy.group">info@solarisenergy.group</a></p>
+    <p>&copy; 2026 Solaris Energy Group. All rights reserved. | Stuttgart, Germany</p>
   </footer>
+
+  <script>
+    // Close menu when a link is clicked
+    document.querySelectorAll('nav ul a').forEach(a => {
+      a.addEventListener('click', () => document.querySelector('nav ul').classList.remove('open'));
+    });
+  </script>
 </body>
 </html>
