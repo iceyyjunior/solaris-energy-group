@@ -13,8 +13,8 @@
         <div class="logo-badge">S</div>
         <div class="logo-text">SOLARIS<br><span>ENERGY GROUP</span></div>
       </a>
-      <button class="burger" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
-      <ul>
+      <button class="burger" aria-label="Menu" id="burgerBtn">☰</button>
+      <ul id="navMenu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About</a></li>
         <li><a href="products.html">Products</a></li>
@@ -94,8 +94,19 @@
   </footer>
 
   <script>
-    document.querySelectorAll('nav ul a').forEach(a => {
-      a.addEventListener('click', () => document.querySelector('nav ul').classList.remove('open'));
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    burgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      burgerBtn.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('#navMenu a').forEach(a => {
+      a.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        burgerBtn.textContent = '☰';
+      });
     });
   </script>
 </body>
