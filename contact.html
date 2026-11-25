@@ -10,11 +10,10 @@
   <header>
     <nav>
       <a href="index.html" class="logo">
-        <div class="logo-badge">S</div>
-        <div class="logo-text">SOLARIS<br><span>ENERGY GROUP</span></div>
+        <img src="1794342197899.jpg" alt="Solaris Energy Group" style="height:42px; width:auto;">
       </a>
-      <button class="burger" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">☰</button>
-      <ul>
+      <button class="burger" aria-label="Menu" id="burgerBtn">☰</button>
+      <ul id="navMenu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="products.html">Products</a></li>
@@ -53,19 +52,24 @@
     </div>
   </div>
 
-  <div class="join-section">
-    <h2>Join Our Growth</h2>
-    <p style="color:var(--text-muted); max-width:600px; margin:0 auto;">We are always looking for smart, dedicated and experienced investors to join our growth. If you think you fit the bill, please contact us via <a href="mailto:investors@solarisenergy.group" style="color:var(--emerald);">investors@solarisenergy.group</a>. Thank you!</p>
-  </div>
-
   <footer>
     <p>&copy; 2026 Solaris Energy Group. All rights reserved. | Stuttgart, Germany</p>
   </footer>
 
   <script>
-    // Close menu when a link is clicked
-    document.querySelectorAll('nav ul a').forEach(a => {
-      a.addEventListener('click', () => document.querySelector('nav ul').classList.remove('open'));
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    burgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      burgerBtn.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('#navMenu a').forEach(a => {
+      a.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        burgerBtn.textContent = '☰';
+      });
     });
   </script>
 </body>
